@@ -1,0 +1,10 @@
+{
+    "name": "bemodeler",
+    "description": "State store for i-bem.js",
+    "version": "0.0.0",
+    "license": "MIT",
+    "keywords": [
+        "bem",
+        "i-bem"
+    ]
+}
