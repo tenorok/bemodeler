@@ -1,15 +1,20 @@
 describe('Simple test.', function() {
 
     describe('Block without DOM.', function() {
-        var block;
+        var block,
+            block2;
+
+        BEM.decl('block', {});
+        BEM.decl('block2', {});
 
         beforeEach(function() {
-            BEM.decl('block', {});
             block = BEM.create('block');
+            block2 = BEM.create('block2');
         });
 
         afterEach(function() {
             block = null;
+            block2 = null;
         });
 
         it('Should automatically be added method with name `model` to every block', function() {
@@ -24,6 +29,21 @@ describe('Simple test.', function() {
             assert.equal(block.model('size'), 100);
             assert.deepEqual(block.model('size', undefined), block);
             assert.isUndefined(block.model('size'));
+        });
+
+        it('Block models should not affect each other', function() {
+            assert.isUndefined(block2.model('value'));
+        });
+
+        describe('The declaration model.', function() {
+            BEM.model('block', {
+                name: { value: 'Jhon' }
+            });
+
+            it('Property `name` should be preset', function() {
+                assert.equal(block.model('name'), 'Jhon');
+            });
+
         });
     });
 

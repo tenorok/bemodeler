@@ -10,7 +10,8 @@ module.exports = function(grunt) {
                         'bower_components/i-bem/i-bem.js',
                         'bower_components/bemer/bemer.js',
                         'lib/bemodeler.js',
-                        'test/simple.js'
+                        'test/simple.js',
+                        'test/modifiers.js'
                     ]
                 },
                 runnerPort: 9999,
