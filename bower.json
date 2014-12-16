@@ -7,9 +7,11 @@
         "bem",
         "i-bem"
     ],
+    "dependencies": {
+        "i-bem": "*"
+    },
     "devDependencies": {
         "jquery": "~2.1.1",
-        "i-bem": "~2.5.1",
         "bemer": "~0.8.0"
     }
 }
