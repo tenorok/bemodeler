@@ -44,6 +44,24 @@ describe('Simple test.', function() {
                 assert.equal(block.model('name'), 'Jhon');
             });
 
+            BEM.model('block', {
+                count: { value: function() { return 100 + 50; }}
+            });
+
+            it('Model value can be function', function() {
+                assert.equal(block.model('count'), 150);
+            });
+
+            BEM.model('block', {
+                context: { value: function() {
+                    return this;
+                }}
+            });
+
+            it('In value as function, context should store the block', function() {
+                assert.equal(block.model('context'), block);
+            });
+
         });
     });
 
