@@ -11,6 +11,8 @@ module.exports = function(grunt) {
                         'bower_components/bemer/bemer.js',
                         'lib/bemodeler.js',
                         'test/simple.js',
+                        'test/value.js',
+                        'test/get.js',
                         'test/modifiers.js'
                     ]
                 },
