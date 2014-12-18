@@ -35,34 +35,6 @@ describe('Simple test.', function() {
             assert.isUndefined(block2.model('value'));
         });
 
-        describe('The declaration model.', function() {
-            BEM.model('block', {
-                name: { value: 'Jhon' }
-            });
-
-            it('Property `name` should be preset', function() {
-                assert.equal(block.model('name'), 'Jhon');
-            });
-
-            BEM.model('block', {
-                count: { value: function() { return 100 + 50; }}
-            });
-
-            it('Model value can be function', function() {
-                assert.equal(block.model('count'), 150);
-            });
-
-            BEM.model('block', {
-                context: { value: function() {
-                    return this;
-                }}
-            });
-
-            it('In value as function, context should store the block', function() {
-                assert.equal(block.model('context'), block);
-            });
-
-        });
     });
 
 });
