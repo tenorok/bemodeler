@@ -27,7 +27,7 @@ describe('The declaration model with `get` property.', function() {
         assert.equal(block.model('name'), 'STEVE!');
     });
 
-    it('In get callback, context should store the block', function() {
+    it('In `get` callback, context should store the block', function() {
         assert.deepEqual(block.model('context'), block);
     });
 
