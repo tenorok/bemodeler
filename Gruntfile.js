@@ -15,7 +15,8 @@ module.exports = function(grunt) {
                         'test/params.js',
                         'test/get.js',
                         'test/set.js',
-                        'test/modifiers.js'
+                        'test/modifiers.js',
+                        'test/DOM.js'
                     ]
                 },
                 runnerPort: 9999,
