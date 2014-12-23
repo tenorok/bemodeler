@@ -7,7 +7,8 @@ describe('Set model values in block parameters.', function() {
     beforeEach(function() {
         block = BEM.create('blockParams', { model: {
             name: 'Steve',
-            count: 24
+            count: 24,
+            undecl: true
         }});
     });
 
@@ -31,6 +32,14 @@ describe('Set model values in block parameters.', function() {
 
     it('Default value should be taken from block parameters with higher priority than model declaration', function() {
         assert.equal(block.model('name'), 'Steve');
+    });
+
+    it('Should preset model property from js-parameters even though this property not declared in model', function() {
+        assert.isTrue(block.model('undecl'));
+    });
+
+    it('Parameter `model` should be deleted', function() {
+        assert.isUndefined(block.params.model);
     });
 
 });
