@@ -12,6 +12,7 @@ module.exports = function(grunt) {
                         'lib/bemodeler.js',
                         'test/simple.js',
                         'test/value.js',
+                        'test/params.js',
                         'test/get.js',
                         'test/set.js',
                         'test/modifiers.js'
