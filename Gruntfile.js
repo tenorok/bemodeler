@@ -45,7 +45,7 @@ module.exports = function(grunt) {
                             ' <%= pkg.author.name %>, <%= pkg.author.homepage %>\n' +
                             ' * @license MIT license\n' +
                             ' * @version ' + version + '\n' +
-                            ' * @date ' + moment().format('DD MMMM YYYY') + ' \n' +
+                            ' * @date ' + moment().format('DD MMMM YYYY') + '\n' +
                             ' */\n',
                         input: 'lib/bemodeler.js'
                     }
@@ -112,15 +112,18 @@ module.exports = function(grunt) {
             fs.writeFileSync(file, JSON.stringify(json, undefined, '    ') + '\n');
         }, this);
 
-        grunt.task.run('lint');
+        grunt.task.run('karma', 'lint');
 
-        grunt.task.run('file_append:release');
-        grunt.task.run('uglify:release');
+        grunt.task.run(
+            'file_append:release',
+            'uglify:release'
+        );
 
-        grunt.task.run('shell:prerelease');
-
-        grunt.task.run('prompt:release');
-        grunt.task.run('shell:release');
+        grunt.task.run(
+            'shell:prerelease',
+            'prompt:release',
+            'shell:release'
+        );
     });
 
 };

@@ -4,7 +4,9 @@
     "version": "0.0.0",
     "license": "MIT",
     "ignore": [
+        ".*",
         "lib",
+        "test",
         "Gruntfile.js",
         "package.json"
     ],
