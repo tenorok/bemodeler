@@ -3,6 +3,11 @@
     "description": "Data store for i-bem.js",
     "version": "0.0.0",
     "license": "MIT",
+    "ignore": [
+        "lib",
+        "Gruntfile.js",
+        "package.json"
+    ],
     "keywords": [
         "bem",
         "i-bem"
