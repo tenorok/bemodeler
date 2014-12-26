@@ -38,4 +38,11 @@ describe('The declaration model with `value` property.', function() {
         assert.equal(block.model('context'), block);
     });
 
+    BEM.model('blockValue', { size: { value: 1 }});
+    BEM.model('blockValue', { size: { value: 2 }});
+
+    it('Model can be overridden', function() {
+        assert.equal(block.model('size'), 2);
+    });
+
 });
