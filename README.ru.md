@@ -190,3 +190,41 @@ component.model('count', 150).model('count'); // → 50
 ```
 
 ## Указание полей в JS-параметрах
+
+Значения для данных возможно передавать в поле `model` js-параметров блока.
+
+Например, для блока `component`:
+
+```js
+BEM.decl('component', {});
+```
+
+Задекларируем модель с полем `name`:
+
+```js
+BEM.model('component', {
+    name: { value: 'Jhon' }
+});
+```
+
+Создадим экземпляр блока `component` с указанием
+значений полей для его модели.
+
+```js
+var component = BEM.create('component', { model: {
+    name: 'Steve'
+}});
+```
+
+Значения полей, указанные в js-параметрах блока имеют приоритет над
+значениями, заданными в декларации модели:
+
+```js
+component.model('name'); // → 'Steve'
+```
+
+При этом поле `model` не доступно напрямую в параметрах блока:
+
+```js
+component.params.model; // → undefined
+```
