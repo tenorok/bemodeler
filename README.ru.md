@@ -123,13 +123,39 @@ BEM.create('component').model('name'); // → 'Jhon'
 ```js
 BEM.model('component', {
     name: { value: function() {
-      return this.__self.getName();
+        return this.__self.getName();
     }}
 });
 BEM.create('component').model('name'); // → 'component'
 ```
 
 ### Поле `get`
+
+Для обработки данных при попытке их получения,
+в декларации модели возможно использование поля `get`.
+
+Поле `get` принимает функцию, в которую передаётся
+один параметр — текущее значение модели для описываемого поля.
+
+Например, для блока `component`:
+
+```js
+BEM.decl('component', {});
+```
+
+Задекларируем поле `name` с обработчиком на получение:
+
+```js
+BEM.model('component', {
+    name: {
+        value: 'Steve',
+        get: function(value) {
+            return value.toUpperCase();
+        }
+    }
+});
+BEM.create('component').model('name'); // → 'STEVE'
+```
 
 ### Поле `set`
 
