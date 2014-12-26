@@ -159,4 +159,34 @@ BEM.create('component').model('name'); // → 'STEVE'
 
 ### Поле `set`
 
+Для обработки данных при установке их значения,
+в декларации модели возможно использование поля `set`.
+
+Поле `set` принимает функцию, в которую передаётся
+два параметра
+* новое значение
+* текущее значение
+
+Например, для блока `component`:
+
+```js
+BEM.decl('component', {});
+```
+
+Задекларируем поле `count` с обработчиком на установку:
+
+```js
+BEM.model('component', {
+    count: {
+        value: 30,
+        set: function(value, currentValue) {
+            return value < 100 ? value : currentValue;
+        }
+    }
+});
+var component = BEM.create('component');
+component.model('count', 50).model('count'); // → 50
+component.model('count', 150).model('count'); // → 50
+```
+
 ## Указание полей в JS-параметрах
