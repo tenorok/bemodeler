@@ -1,10 +1,24 @@
 {
     "name": "bemodeler",
-    "description": "State store for i-bem.js",
-    "version": "0.0.0",
+    "description": "Data store for i-bem.js",
+    "version": "0.1.0",
     "license": "MIT",
+    "ignore": [
+        ".*",
+        "lib",
+        "test",
+        "Gruntfile.js",
+        "package.json"
+    ],
     "keywords": [
         "bem",
         "i-bem"
-    ]
+    ],
+    "dependencies": {
+        "i-bem": "*"
+    },
+    "devDependencies": {
+        "jquery": "~2.1.1",
+        "bemer": "~0.8.0"
+    }
 }
