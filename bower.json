@@ -18,6 +18,7 @@
         "i-bem": "3.x.x"
     },
     "devDependencies": {
+        "es5-shim": "4.x.x",
         "jquery": "2.x.x",
         "bemer": "0.x.x"
     }
