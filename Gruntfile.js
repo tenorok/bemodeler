@@ -13,6 +13,7 @@ module.exports = function(grunt) {
             test: {
                 options: {
                     files: [
+                        'bower_components/es5-shim/es5-shim.min.js',
                         'bower_components/jquery/dist/jquery.js',
                         'bower_components/i-bem/i-bem.js',
                         'bower_components/bemer/bemer.js',
