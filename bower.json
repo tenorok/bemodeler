@@ -15,10 +15,11 @@
         "i-bem"
     ],
     "dependencies": {
-        "i-bem": "*"
+        "i-bem": "3.x.x"
     },
     "devDependencies": {
-        "jquery": "~2.1.1",
-        "bemer": "~0.8.0"
+        "es5-shim": "4.x.x",
+        "jquery": "2.x.x",
+        "bemer": "0.x.x"
     }
 }
